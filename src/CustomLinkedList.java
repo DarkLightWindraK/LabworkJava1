@@ -31,14 +31,15 @@ public class CustomLinkedList<E> {
         }
     }
 
-    private Node<E> first;
-    private Node<E> last;
-    private int size;
+    Node<E> first;
+    Node<E> last;
+    int size;
 
     /**
      * Constructor for creating a new linked list with size 0.
      */
     public CustomLinkedList() {
+        first = last = null;
         size = 0;
     }
 
@@ -66,7 +67,7 @@ public class CustomLinkedList<E> {
      * @throws IndexOutOfBoundsException if the index is larger than or equal to the size of the linked list
      */
     public E get(int index) throws IndexOutOfBoundsException {
-        if (index >= size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
 
@@ -85,7 +86,7 @@ public class CustomLinkedList<E> {
      * @throws IndexOutOfBoundsException if the index is larger than or equal to the size of the linked list
      */
     public E remove(int index) throws IndexOutOfBoundsException {
-        if (index >= size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
 
@@ -110,7 +111,7 @@ public class CustomLinkedList<E> {
      */
     public E remove(E element) throws NoSuchElementException {
         Node<E> current = first;
-        while (current != null && current.item != element) {
+        while (current != null && !current.item.equals(element)) {
             current = current.next;
         }
         if (current != null) {
