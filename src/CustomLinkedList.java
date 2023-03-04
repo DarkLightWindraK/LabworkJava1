@@ -97,7 +97,9 @@ public class CustomLinkedList<E> {
         E savedValue = current.item;
 
         current.prev.next = current.next;
-        current.next.next = current.prev;
+        if (current.next != null) {
+            current.next.prev = current.prev;
+        }
         size--;
         return savedValue;
     }
@@ -116,7 +118,9 @@ public class CustomLinkedList<E> {
         }
         if (current != null) {
             current.prev.next = current.next;
-            current.next.next = current.prev;
+            if (current.next != null) {
+                current.next.prev = current.prev;
+            }
             size--;
             return current.item;
         } else {
