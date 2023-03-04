@@ -31,9 +31,9 @@ public class CustomLinkedList<E> {
         }
     }
 
-    Node<E> first;
-    Node<E> last;
-    int size;
+    private Node<E> first;
+    private Node<E> last;
+    private int size;
 
     /**
      * Constructor for creating a new linked list with size 0.
@@ -122,5 +122,17 @@ public class CustomLinkedList<E> {
         } else {
             throw new NoSuchElementException();
         }
+    }
+
+    public Node<E> getFirst() {
+        return first;
+    }
+
+    public Node<E> getLast() {
+        return last;
+    }
+
+    public int getSize() {
+        return size;
     }
 }

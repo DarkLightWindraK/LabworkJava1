@@ -22,7 +22,7 @@ public class CustomLinkedListTest {
     @Test
     public void testAdd() {
         list.add("forth");
-        assertEquals("forth", list.last.item);
+        assertEquals("forth", list.getLast().item);
     }
 
     // Test 2: проверим, что вызов метода get существующего индекса работает корректно
@@ -43,7 +43,7 @@ public class CustomLinkedListTest {
     public void testRemove() {
         String item = list.remove(1);
         assertEquals("second", item);
-        assertFalse(list.last.item.equals(item));
+        assertFalse(list.getLast().item.equals(item));
     }
 
     // Test 5: проверим, что вызов метода remove(E) удаляет элемент из списка, когда элемент существует
@@ -51,7 +51,7 @@ public class CustomLinkedListTest {
     public void testRemoveElement() {
         String item = list.remove("second");
         assertEquals("second", item);
-        assertFalse(list.last.item.equals(item));
+        assertFalse(list.getLast().item.equals(item));
     }
 
     // Test 6: проверим, что вызов метода remove(E) приводит к выбросу NoSuchElementException, если элемент отсутствует в списке
