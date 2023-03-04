@@ -2,7 +2,7 @@ import java.util.NoSuchElementException;
 
 public class CustomLinkedList<E> {
 
-    private static class Node<E> {
+    public static class Node<E> {
         E item;
         Node<E> next;
         Node<E> prev;
